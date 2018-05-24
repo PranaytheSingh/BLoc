@@ -42,16 +42,18 @@ $ git clone https://github.com/shitbox/BLoc
 $ cd BLoc
 
 # Install dependencies and run
-$ sbt run // This is will launch a server bound to 8888
+$ sbt run
+
+# This is will launch a server bound to 8888
 
 ```
 
 ## API
-*GET /test - Tests if server is Active and listening 
+**GET /test** - Tests if server is Active and listening 
 
-* GET /v1/:miner/start - Start mining blocks by passing any one of the Client names from the [Registry](https://github.com/shitbox/BLoc/blob/master/src/main/scala/com/pranay/blockchain/Config.scala). You can have as many Clients as long as you specify them in the registry.
+**GET /v1/:miner/start** - Start mining blocks by passing any one of the Client names from the [Registry](https://github.com/shitbox/BLoc/blob/master/src/main/scala/com/pranay/blockchain/Config.scala). You can have as many Clients as long as you specify them in the registry.
 
-*GET /v1/final - Get a JSON Blockchain manifest specifying blockchain info such as block hash, block minedBy.
+**GET /v1/final** - Get a JSON Blockchain manifest specifying blockchain info such as block hash, block minedBy.
 
 ## Sample Output
 
