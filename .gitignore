@@ -52,7 +52,7 @@ project/plugins/project/
 ## File-based project format:
 *.ipr
 *.iws
-
+.DS_STORE
 ## Plugin-specific files:
 
 # IntelliJ
