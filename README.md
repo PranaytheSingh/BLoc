@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-<img src="https:https://github.com/shitbox/BLoc/blob/master/images/b.png" alt="Markdownify" width="200">
+<img src="https://github.com/shitbox/BLoc/blob/master/images/b.png" width="200">
   <br>
   Bloc
   <br>
@@ -26,12 +26,9 @@ While trying to experiment with crypto assets and art we came across the need fo
 
 ## Configrable Features
 
-*  Miners
-  - Control the number of Miners in the network.
-* Blockchain Length
-  - Control the final length of the Chain
-* Difficutly
-  - Control the difficulty of solving a Hash
+*  Miners - Control the number of Miners in the network.
+* Blockchain Length - Control the final length of the Chain
+* Difficutly - Control the difficulty of solving a Hash
 
 ## How To Use
 
@@ -50,26 +47,21 @@ $ sbt run // This is will launch a server bound to 8888
 ```
 
 ## API
-*GET /test
- - Tests if server is Active and listening 
+*GET /test - Tests if server is Active and listening 
 
-* GET /v1/:miner/start
- - Start mining blocks by passing any one of the Client names from the [Registry](https://github.com/shitbox/BLoc/blob/master/src/main/scala/com/pranay/blockchain/Config.scala). You can have as many Clients as long as you specify them in the registry.
+* GET /v1/:miner/start - Start mining blocks by passing any one of the Client names from the [Registry](https://github.com/shitbox/BLoc/blob/master/src/main/scala/com/pranay/blockchain/Config.scala). You can have as many Clients as long as you specify them in the registry.
 
-*GET /v1/final
- - Get a JSON Blockchain manifest specifying blockchain info such as block hash, block minedBy.
+*GET /v1/final - Get a JSON Blockchain manifest specifying blockchain info such as block hash, block minedBy.
 
 ## Sample Output
+
 ```
- - block : 91 Mined By: Client2 Is Mined : true
- - block : 92 Mined By: Client2 Is Mined : true
- - block : 93 Mined By: Client1 Is Mined : true
- - block : 94 Mined By: Client2 Is Mined : true
- - block : 95 Mined By: Client1 Is Mined : true
- - block : 96 Mined By: Client1 Is Mined : true
- - block : 97 Mined By: Client2 Is Mined : true
- - block : 97 Mined By: Client1 Is Mined : true
- - block : 99 Mined By: Client1 Is Mined : true
+- block 97 mined by: Client1 HASH: 0002a41f6874e2983f52b9871ba026a898cb534991b597c70a646cd0a6bc6fd2
+- block 96 mined by: Client4 HASH: 600d2f9268565118630ed4faca659bdb401e4cd59bc30b5da93cdc0fe804ae9c
+- block 97 mined by: Client1 HASH: 97df47869182399a22a93e5307e62a38ed1ec1159cad1d05a31d519981c5cd0b
+- block 99 mined by: Client4 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
+- block 99 mined by: Client3 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
+- block 99 mined by: Client2 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
 ```
 
 ## License

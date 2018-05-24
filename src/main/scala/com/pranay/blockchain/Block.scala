@@ -26,7 +26,7 @@ class Block(val data:String, val previoushash:String) extends Logging{
 
   def setminedBy(miner:String) =  {
     minedBy = miner
-    info("block " + data + " mined by: "+miner)
+    info("block " + data + " mined by: "+miner + " HASH: " + hash)
   }
 
   def checkisMined() = {
