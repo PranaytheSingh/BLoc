@@ -58,12 +58,17 @@ $ sbt run
 ## Sample Output
 
 ```
-- block 97 mined by: Client1 HASH: 0002a41f6874e2983f52b9871ba026a898cb534991b597c70a646cd0a6bc6fd2
-- block 96 mined by: Client4 HASH: 600d2f9268565118630ed4faca659bdb401e4cd59bc30b5da93cdc0fe804ae9c
-- block 97 mined by: Client1 HASH: 97df47869182399a22a93e5307e62a38ed1ec1159cad1d05a31d519981c5cd0b
-- block 99 mined by: Client4 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
-- block 99 mined by: Client3 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
-- block 99 mined by: Client2 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
+.
+.
+.
+- block 93 mined by: Client1 HASH: 0002a41f6874e2983f52b9871ba026a898cb534991b597c70a646cd0a6bc6fd2
+- block 94 mined by: Client4 HASH: 000d2f9268565118630ed4faca659bdb401e4cd59bc30b5da93cdc0fe804ae9c
+- block 95 mined by: Client1 HASH: 000f47869182399a22a93e5307e62a38ed1ec1159cad1d05a31d519981c5cd0b
+- block 96 mined by: Client4 HASH: 000b0e63325a53dea459064e11b8c9c1c6c21ae65ae01e7e56fdbfa239b5c819
+- block 97 mined by: Client3 HASH: 00070d9c6542e39fa7a1fc8d61543932d2cd0a16f043d5a8a3f417e5e5d34379
+- block 98 mined by: Client2 HASH: 000367ea721822746b459f9d02644eb751293ebd124df801022fc06e5c165d4c
+.
+.
 ```
 
 ## License
