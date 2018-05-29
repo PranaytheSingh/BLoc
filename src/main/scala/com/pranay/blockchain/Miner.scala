@@ -1,22 +1,32 @@
-package com.pranay.blockchain
-
-import com.pranay.blockchain.Chain.{addBlock, awardBlocktoClient, getBlockchain}
-import com.twitter.inject.Logging
-
-class Miner(miner:String) extends Runnable with Logging {
-
-  override def run(): Unit = {
-      while(getBlockchain.length < Config.miningDuration) {
-          if (getBlockchain.last.isMined) {
-            var name: String = addBlock(data = (getBlockchain.indexOf(getBlockchain.last) + 1)
-              .toString, previousHash = getBlockchain.last.hash)
-          }
-          var (b: Block, didIMine: Boolean) = getBlockchain.last.mineBlock(3)
-          if (didIMine) {
-            Tools.isBlockchainPreserved(getBlockchain)
-            awardBlocktoClient(b, miner)
-
-        }
-      }
-  }
-}
+//package com.pranay.blockchain
+//
+////import com.pranay.blockchain.Chain.{addBlock, awardBlocktoClient, getBlockchain, getBlockchainLast}
+//import com.twitter.inject.Logging
+//import java.lang.IllegalAccessException
+//
+//class Miner(miner:String) extends Runnable with Logging {
+//
+//  override def run(): Unit = {
+//    while (getBlockchain.length < Config.miningDuration) {
+//      var hash: String = "a"
+//      var target: String = List.fill(Config.difficulty)(0).mkString
+//      var nonce = 0
+//      var b: Block = getBlockchainLast
+//
+//      try {
+//        while (!hash.substring(0, Config.difficulty).equals(target)) {
+//          if (b.checkisMined()) throw new Exception("already built");
+//          nonce += 1
+//          hash = Tools
+//            .getHash(getBlockchainLast.previoushash + getBlockchainLast.timestamp
+//              .toString + getBlockchainLast.data + nonce.toString)
+//        }
+//
+//        awardBlocktoClient(b, miner, hash)
+//      } catch {
+//        case e: Exception => info("Block already mined")
+//      }
+//    }
+//  }
+//  }
+//

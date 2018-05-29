@@ -2,7 +2,7 @@ package com.pranay.blockchain
 
 import java.security.{Key, MessageDigest, PrivateKey, PublicKey, Signature}
 import java.util.Base64
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
 object Tools {
   def getHash(input:String):String = {
@@ -14,22 +14,23 @@ object Tools {
   }
 
   def checkPreviousHash(previousBlock:Block, currentBlock:Block):Boolean = {
-    previousBlock.hash == currentBlock.previoushash
+    previousBlock.getHash == currentBlock.previoushash
   }
 
   def checkCurrentHash(currentBlock:Block):Boolean = {
-    currentBlock.hash == getHash(currentBlock.previoushash + currentBlock.timestamp.toString + currentBlock.data)
+    currentBlock.getHash() == getHash(currentBlock.previoushash + currentBlock.timestamp.toString + currentBlock.name)
   }
 
-  def isBlockchainPreserved(blockchain:ArrayBuffer[Block]):Boolean = {
-    if (blockchain.length > 1){
-    for(i <- 0 to blockchain.length-1) {
-      if ((checkCurrentHash(blockchain(i + 1)) && checkPreviousHash(blockchain(i), blockchain(i + 1))) == false) {
-        return false
-        }
+  def isBlockchainPreserved(blockchain:ListBuffer[Block]):Boolean = {
+      for (i <- 1 to blockchain.length-1) {
+        if (!(checkPreviousHash(blockchain(i - 1), blockchain(i)) && checkCurrentHash(blockchain(i)))) return false
       }
-    }
-    return true
+    true
+  }
+
+  def checkHashValue(hash:String, block:Block):Boolean = {
+    val target: String = List.fill(block.mineOnDifficulty)(0).mkString
+    hash.substring(0,block.mineOnDifficulty).equals(target)
   }
 
   def applyECDSASig(privateKey: PrivateKey, input:String):Array[Byte] = {
